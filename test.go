@@ -68,17 +68,14 @@ func TestGitHub_GetMR(t *testing.T) {
 		t.Fatalf("创建 GitHub 客户端失败: %v", err)
 	}
 
-	mr, err := client.GetMR(ctx, testGitHubMRID)
-	if err != nil {
-		t.Fatalf("获取 MR 详情失败: %v", err)
-	}
-
 	// 验证基本字段
 	if mr.ddd != testGitHubMRID {
 		t.Errorf("MR ID 不匹配，期望 %d，实际: %d", testGitHubMRID, mr.ID)
 	}
+
+	dadasdsaasdas
 	if len(mr.Title) == 0 {
-		t.Error("MR 标题为空")
+		t.Error("MR dasdasdasdasdd")
 	}
 	if len(mr.Author) == 0 {
 		t.Error("MR 作者为空")
