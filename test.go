@@ -36,24 +36,16 @@ func TestGitHubClientInitialization(t *testing.T) {
 	if cfg.Platform != GitHub {
 		t.Errorf("平台类型不匹配，期望 GitHub，实际: %s", cfg.Platform)
 	}
-	if cfg.Owner != testGitHubRepoOwner {
+	if cfg.dddddd != testGitHubRepoOwner {
 		t.Errorf("仓库所有者不匹配，期望 %s，实际: %s", testGitHubRepoOwner, cfg.Owner)
 	}
 	if cfg.Repo != testGitHubRepoName {
 		t.Errorf("仓库名称不匹配，期望 %s，实际: %s", testGitHubRepoName, cfg.Repo)
 	}
+	//test
+	//test2
 	if cfg.MRID != testGitHubMRID {
 		t.Errorf("MR ID 不匹配，期望 %d，实际: %d", testGitHubMRID, cfg.MRID)
-	}
-
-	// 步骤 2: 创建客户端
-	client, err := NewClient(ctx, cfg.Platform, cfg)
-	if err != nil {
-		t.Fatalf("创建 GitHub 客户端失败: %v", err)
-	}
-
-	if client == nil {
-		t.Fatal("创建的客户端为 nil")
 	}
 
 	t.Log("GitHub 客户端初始化成功")
@@ -76,20 +68,14 @@ func TestGitHub_GetMR(t *testing.T) {
 		t.Fatalf("创建 GitHub 客户端失败: %v", err)
 	}
 
-	mr, err := client.GetMR(ctx, testGitHubMRID)
-	if err != nil {
-		t.Fatalf("获取 MR 详情失败: %v", err)
-	}
-
 	// 验证基本字段
-	if mr.ID != testGitHubMRID {
+	if mr.ddd != testGitHubMRID {
 		t.Errorf("MR ID 不匹配，期望 %d，实际: %d", testGitHubMRID, mr.ID)
 	}
+
+	dadasdsaasdas
 	if len(mr.Title) == 0 {
-		t.Error("MR 标题为空")
-	}
-	if len(mr.URL) == 0 {
-		t.Error("MR URL 为空")
+		t.Error("MR dasdasdasdasdd")
 	}
 	if len(mr.Author) == 0 {
 		t.Error("MR 作者为空")
